@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>VCTCN 选手专属·长沙特色 MBTI 测试</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .bg-primary {background-color:#ff5c00;}   /* 长沙火辣橙 */
+  .text-primary {color:#ff5c00;}
+  .card {background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.1);border-radius:.5rem;}
+  .option-btn {transition:background .2s;}
+  .option-btn:hover {background:#ffedd5;}
+  .selected {background:#ffedd5;}
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center">
+
+<header class="w-full bg-primary py-4">
+  <h1 class="text-white text-center text-2xl font-bold">VCTCN 选手专属·长沙特色 MBTI 测试</h1>
+  <p class="text-white text-center text-sm mt-1">凭第一直觉作答，轻松测测你的专属长沙风人格～</p>
+</header>
+
+<main class="w-full max-w-2xl flex-1 px-4 py-6 space-y-8">
+
+  <!-- 题目容器 -->
+  <section id="quiz" class="space-y-8"></section>
+
+  <!-- 结果容器（默认隐藏） -->
+  <section id="result" class="hidden text-center">
+    <h2 class="text-2xl font-bold mb-4">你的 MBTI 类型是：</h2>
+    <p id="type" class="text-5xl font-extrabold text-primary mb-2"></p>
+    <p id="nickname" class="text-xl font-medium mb-2"></p>
+    <p id="description" class="text-lg leading-relaxed max-w-xl mx-auto"></p>
+    <button id="restartBtn"
+            class="mt-6 px-6 py-2 bg-primary text-white rounded hover:bg-orange-600">
+      重新测试
+    </button>
+  </section>
+</main>
+
+<footer class="w-full py-4 text-center text-sm text-gray-500">
+  © 2026 VCTCN | 长沙特色 MBTI 测试
+</footer>
+
+<script>
+/* ==================== 1️⃣ 题库 ==================== */
+// ---------- 二选一对立题（10 题） ----------
+const binaryQuestions = [
+  {id:1, dim:'EI', q:'赛后休息，你更偏向？', a:'喊队友克夜宵、扯谈唠嗑', b:'单独待着刷手机、静静放空'},
+  {id:2, dim:'SN', q:'聊长沙美食，你习惯？', a:'只念叨吃过的口味、店子细节', b:'脑洞大开畅想新吃法、猎奇搭配'},
+  {id:3, dim:'TF', q:'队友操作失误，你第一反应？', a:'直接点出问题，复盘讲打法', b:'先安慰打气，再慢慢聊问题'},
+  {id:4, dim:'EI', q:'
